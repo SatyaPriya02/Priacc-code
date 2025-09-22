@@ -1,0 +1,49 @@
+/* 
+/* src/pages/leave.css */
+.leave-table {
+  width:100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color:black;
+  
+}
+.leave-table th, .leave-table td { padding: 12px 16px; text-align: left; }
+.leave-table th { background: #f7f7f7; font-weight: 600; border-bottom: 2px solid #eee; }
+.leave-table tr { border-bottom: 1px solid #eee; }
+.leave-table tr:last-child { border-bottom: none; }
+.leave-table tbody tr:hover { background:#d4f8d4; }
+.status-badge { padding: 6px 12px; border-radius: 12px; font-weight: 600; font-size: 0.85rem; display: inline-block; }
+.status-pending  { background: #fff7cc; color: #7a6b00; }
+.status-approved { background: #d4f8d4; color: #065f0c; }
+.status-rejected { background: #fddcdc; color: #8a0e0e; } 
+/* Responsive leave tables */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .leave-table th,
+  .leave-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  form.row {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  form.row label {
+    width: 100%;
+  }
+
+  form.row button {
+    width: 100%;
+  }
+}

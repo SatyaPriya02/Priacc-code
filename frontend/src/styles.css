@@ -1,0 +1,286 @@
+/* ===== Base Reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f7f8fa;
+  color: #333;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { font-weight: 700; color: black; }
+.nav-links { display: flex; gap: 14px; }
+.nav-links a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #333;
+}
+.nav-links a:hover {
+  background: #e9f4ff;
+  color: #007bff;
+}
+.nav-links a.active-link {
+  font-weight: bold;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-right { display: flex; align-items: center; }
+
+/* ===== Container & Cards ===== */
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* ===== Forms ===== */
+label { display: flex; flex-direction: column; gap: 6px; font-size: .95rem; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+}
+textarea { min-height: 100px; resize: vertical; }
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #0d6efd;
+}
+.btn:hover { filter: brightness(1.05); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn-primary { background: #1e70ec; color: #fff; }
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-secondary { background: #6c757d; color: #fff; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+}
+.btn-add, .btn-edit {
+  background: #1a6fee !important;
+  color: #fff !important;
+}
+
+/* ===== Tables ===== */
+.table-wrapper { width: 100%; overflow-x: auto; }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  min-width: 600px;
+}
+.table th, .table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: .95rem;
+}
+.table tr:hover { background: #f1f7ff; }
+.leave-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.leave-table th, .leave-table td { padding: 10px; border-bottom: 1px solid #eee; }
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 95%;
+}
+.modal input, .modal select { margin-bottom: 10px; }
+
+/* ===== Auth / Login ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.auth-container input {
+  margin-bottom: 10px;
+}
+ .auth-container h2{
+  margin-bottom: 10px;
+ }
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.error { color: #d8000c; margin-top: 8px; }
+.success { color: #198754; margin-top: 8px; }
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/loginbg1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+.login-form {
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.login-title { text-align: center; margin-bottom: 20px; color: #333; }
+
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .container { max-width: 800px; padding: 0 12px; }
+  .table { font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { 
+    display: block;
+   
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; 
+    left: 5px; 
+    right:0;
+    background: #fff;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  .nav-links.open { display: flex; }
+
+  .container { padding: 10px; }
+  .card { padding: 15px; }
+  .table { min-width: 600px; }
+  .modal { width: 95% !important; padding: 15px; }
+}
+
+@media (max-width: 600px) {
+  .card { margin: 10px; padding: 15px; }
+  .table th, .table td { padding: 6px; font-size: 12px; }
+  h2, h3 { font-size: 18px; }
+  .btn { padding: 6px 10px; font-size: 14px; }
+  .btn-danger{margin-top: 10px;}
+  .card1{margin: 10px;}
+}
+
+@media (max-width: 480px) {
+  .auth-form { padding: 15px; }
+  .auth-form h2 { font-size: 18px; }
+  .login-form { padding: 20px; margin-left: 40px;}
+  .login-title { font-size: 18px; }
+  .btn { font-size: 13px; }
+}
+/* Default: Mobile-friendly (no fixed margins) */
+.card1 {
+  width: 95%;
+  margin: 10px auto;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  margin-left: 10px;
+  
+}
+
+/* Desktop: apply margins like your inline style */
+@media (min-width: 992px) {
+  .card1 {
+    width:1200px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    padding: 12px;
+  }
+}
+/* Default (Desktop) – keep current font sizes */
+body {
+  font-size: 16px; /* base */
+}
+
+/* Tablet view (below 992px) */
+@media (max-width: 992px) {
+  body {
+    font-size: 15px;
+  }
+  h1, h2, h3 {
+    font-size: 90%;
+  }
+  .table th, .table td,
+  .leave-table th, .leave-table td {
+    font-size: 14px;
+    padding: 6px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+/* Mobile view (below 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* smaller base */
+  }
+  h1, h2, h3 {
+    font-size: 85%;
+  }
+  .table th, .table td,
+  .leave-table th, .leave-table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+}
+
