@@ -29,7 +29,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // Change this to wherever your backend runs in dev
-const backendURL = "http://localhost:2000";
+const backendURL = "http://172.0.29.206:2000/";
 
 export default defineConfig({
   plugins: [react()],
