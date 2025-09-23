@@ -169,7 +169,7 @@ const server = http.createServer(app);
 // ✅ Allowed origins
 const allowedOrigins = [
   "http://localhost:5173",       // Vite dev
-  "http://54.193.241.233",       // server IP
+  "http://54.91.186.68",       // server IP
   "https://priaccinnovations.online" // your domain
 ];
 
